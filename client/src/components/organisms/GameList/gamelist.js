@@ -6,7 +6,7 @@ export const GameList = ({ gameList = [] }) => {
   return (
     <>
       {
-        gameList.map(gameTitle => <GameListing key={gameTitle} gameTitle={gameTitle}  />)
+        gameList.map(game => <GameListing key={game.id} gameTitle={game.name}  />)
       }
     </>
   );

@@ -1,5 +1,4 @@
 import express from 'express';
-import axios from 'axios';
 
 import config from './config';
 import routes from './routes';
@@ -16,7 +15,7 @@ app.use((req, res, next) => {
     };
     next();
   });
-app.use('/backlogs', routes.backlogs);
-app.use('/igdbapi', routes.igdbApi);
+app.use('/api/backlogs', routes.backlogs);
+app.use('/api/igdb', routes.igdbApi);
 
 app.listen(config.port, () => console.log(`Listening on port ${config.port}`));

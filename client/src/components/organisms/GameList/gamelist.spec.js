@@ -4,9 +4,18 @@ import renderer from 'react-test-renderer';
 
 test('GameList matches snapshot', () => {
   const listOfGames = [
-    'Halo 1',
-    'God of War',
-    'Super Smash Bros.'
+    {
+      id: 1,
+      name: 'Halo 1'
+    },
+    {
+      id: 2,
+      name: 'God of War'
+    },
+    {
+      id: 3,
+      name: 'Super Smash Bros.'
+    }
   ]
   
   const tree = renderer
