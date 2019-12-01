@@ -17,6 +17,6 @@ app.use((req, res, next) => {
     next();
   });
 app.use('/backlogs', routes.backlogs);
-app.use('/igdbApi', routes.igdbApi);
+app.use('/igdbapi', routes.igdbApi);
 
 app.listen(config.port, () => console.log(`Listening on port ${config.port}`));
