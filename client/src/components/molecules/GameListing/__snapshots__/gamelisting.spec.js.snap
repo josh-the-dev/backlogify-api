@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`GameList matches snapshot 1`] = `
-<h2
-  className="sc-bdVaJa sc-bwzfXH kzWVmP"
->
-  Halo 1
-</h2>
-`;
