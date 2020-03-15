@@ -6,9 +6,9 @@
   "author": "Joshua Grant <grantjoshua1995@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf ./build && tsc",
-    "start": "yarn build && node build/app.js",
-    "heroku-postbuild": "cd client && yarn && yarn build"
+    "build-client": "cd client && yarn && yarn build",
+    "build": "rimraf ./build && tsc && yarn build-client",
+    "start": "yarn build && node ./build/app.js"
   },
   "dependencies": {
     "@types/node": "^13.9.1",
