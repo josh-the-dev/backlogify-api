@@ -1,26 +1,39 @@
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
-    entry: './src/index.js',
+
+    // webpack will take the files from ./src/index
+    entry: './index',
+
+    // and output it into /dist as bundle.js
     output: {
-        path: path.resolve(__dirname, '../public'),
-        publicPath: '/',
+        path: path.join(__dirname, '../public'),
         filename: 'bundle.js'
     },
-    devServer: {
-        contentBase: './dist',
+
+    // adding .ts and .tsx to resolve.extensions will help babel look for .ts and .tsx files to transpile
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js']
     },
+
     module: {
-        rules: [{
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: ['babel-loader', 'eslint-loader'] // include eslint-loader
-        }]
+        rules: [
+
+            // we use babel-loader to load our jsx and tsx files
+            {
+                test: /\.(ts|js)x?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                },
+            },
+
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve('./index.html')
+            template: './index.html'
         })
     ]
 };
