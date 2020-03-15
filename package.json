@@ -6,12 +6,14 @@
   "author": "Joshua Grant <grantjoshua1995@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node app.ts",
+    "build": "rimraf ./build && tsc",
+    "start": "yarn build && node build/app.js",
     "heroku-postbuild": "cd client && yarn && yarn build"
   },
   "dependencies": {
     "@types/node": "^13.9.1",
     "express": "^4.17.1",
+    "rimraf": "^3.0.2",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
