@@ -8,7 +8,7 @@ module.exports = {
 
     // and output it into /dist as bundle.js
     output: {
-        path: path.join(__dirname, '../public'),
+        path: path.join(__dirname, '../build/public'),
         filename: 'bundle.js'
     },
 
