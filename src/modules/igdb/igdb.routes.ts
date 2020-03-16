@@ -3,8 +3,8 @@ import api from '../../api/api';
 
 const routes = express.Router();
 
-routes.get('/games', async (req, res) => {
-  const games = await api.getGames();
+routes.get('/games/:gameName', async (req, res) => {
+  const games = await api.getGames(req.params.gameName);
   return res.status(200).send({ games: games });
 });
 

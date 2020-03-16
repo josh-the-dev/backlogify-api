@@ -1,6 +1,9 @@
 import path from 'path';
 import express from 'express';
+import * as dotenv from 'dotenv';
+dotenv.config();
 import routes from './modules/routes';
+
 const app = express();
 const port = process.env.PORT || 3000;
 const publicPath = path.join(__dirname, './public');
