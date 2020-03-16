@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf ./build && tsc",
-    "start": "yarn build && node ./build/app.js",
+    "start": "yarn build && node ./build/src/app.js",
     "dev": "nodemon"
   },
   "dependencies": {
