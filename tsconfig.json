@@ -1,16 +1,21 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
-    "target": "es5",
     "module": "commonjs",
-    "lib": ["es6"],
-    "allowJs": true,
-    "outDir": "build",
-    "rootDir": "./src",
-
     "strict": true,
-    "noImplicitAny": true,
+    "baseUrl": "./",
+    "outDir": "build",
+    "sourceMap": true,
+    "removeComments": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "experimentalDecorators": true,
+    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"]
   },
-  "exclude": ["./client"]
+  "include": ["./src/**/*.ts"],
+  "exclude": ["./src/**/*.test.ts"]
 }
