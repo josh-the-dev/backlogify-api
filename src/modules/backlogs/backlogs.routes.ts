@@ -3,8 +3,6 @@ import { client } from '../../app';
 
 const routes = express.Router();
 
-client.connect();
-
 routes.get('/:id', async (req, res) => {
   const { id } = req.params;
   client.query(`SELECT * FROM backlogs where id = ${id}`, (err, results) => {
