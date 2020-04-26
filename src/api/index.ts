@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import config from '../../config';
-import { Game } from '../modules/games/games.model';
+import { Game } from 'src/types';
 
 class ApiClient {
   constructor(apiToken: string | undefined) {
