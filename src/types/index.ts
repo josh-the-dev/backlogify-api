@@ -5,9 +5,16 @@ export interface User {
 }
 
 export interface Backlog {
-  id: number;
+  id?: number;
   name: string;
-  backlogGames: Game[];
+  order: number;
+  games: BacklogGame[];
+}
+
+export interface BacklogGame {
+  id?: number;
+  name: string;
+  backlog_id?: number;
 }
 
 export interface Game {
