@@ -3,6 +3,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import { Client } from 'pg';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 import config from '../config';
 export const client = new Client({
@@ -17,8 +18,9 @@ import routes from './modules/routes';
 
 const app = express();
 const port = process.env.PORT || 3000;
-
 app.use(bodyParser.json());
+//@ts-ignore
+app.use(cors());
 
 app.use('/api/backlogs', routes.backlogs);
 app.use('/api/backloggames', routes.backlogGames);
