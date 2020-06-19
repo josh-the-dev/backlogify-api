@@ -6,7 +6,7 @@
   "author": "Joshua Grant <grantjoshua1995@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf ./build && tsc",
+    "build": "rimraf ./build && tsc --skipLibCheck",
     "start": "yarn build && node ./build/src/app.js",
     "dev": "nodemon"
   },
