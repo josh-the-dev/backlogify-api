@@ -22,4 +22,21 @@ routes.post('/register', async (req, res) => {
   );
 });
 
+routes.get('/:id/backlogs', async (req, res) => {
+  const { id } = req.params;
+  client.query(
+    `SELECT id from backlogs WHERE backlogs.user_id = ${id}`,
+    (err, results) => {
+      if (err) {
+        throw err;
+      }
+      if (results.rowCount === 0) {
+        return res.sendStatus(404);
+      } else {
+        return res.status(200).json(results.rows);
+      }
+    }
+  );
+});
+
 export default routes;
