@@ -22,6 +22,7 @@ export interface Game {
   name: string;
   genres: Genre[];
   platforms: Platform[];
+  cover: { id: number; url: string };
 }
 
 export type Genre = string;

@@ -18,7 +18,7 @@ class ApiClient {
   async getGames(gameName: string): Promise<RequestGameResponse> {
     const gameResponse = await this.client.post(
       '/games',
-      `fields genres, name, platforms; limit 10; search "${gameName}";`
+      `fields genres, name, platforms, cover.url; limit 10; search "${gameName}";`
     );
     return gameResponse.data;
   }
@@ -33,8 +33,6 @@ class ApiClient {
   }
 }
 
-export interface RequestGameResponse {
-  Games: Game[];
-}
+export type RequestGameResponse = Game[];
 
 export default new ApiClient(config.igdbApiKey);
