@@ -1,10 +1,10 @@
 import { Schema, model, connect } from "mongoose";
 
-interface Backlog {
+export interface Backlog {
   name: string;
 }
 
-const backlogSchema = new Schema<Backlog>({
+export const backlogSchema = new Schema<Backlog>({
   name: { type: String, required: true },
 });
 

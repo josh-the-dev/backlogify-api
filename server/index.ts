@@ -3,6 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import backlogRoutes from "./routes/backlogs";
+import userRoutes from "./routes/users";
 import { config } from "dotenv";
 // Run dotenv/config
 config();
@@ -33,7 +34,8 @@ mongoose
 
 mongoose.set("useFindAndModify", false);
 
-app.use("/backlogs", backlogRoutes);
+app.use("/api/backlogs", backlogRoutes);
+app.use("/api/users", userRoutes);
 
 // All other GET requests not handled before will return our React app
 app.get("*", (req, res) => {
