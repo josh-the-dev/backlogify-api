@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && node dist/index.js",
-    "develop": "nodemon server/index.ts",
-    "build": "cd client && yarn && yarn build",
+    "develop": "nodemon index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
